@@ -11,10 +11,10 @@ We test three diferent cases:
 
 ## Execution results
 
-Here is the output we get when running this test program. See some conclusions below.
+Here is the output we get when running this test program, slightly prettified. See some conclusions below.
 
+### Test with simple class
 ```
-test with simple class
   create capacity=0 vector
   push 1
     constr 1
@@ -38,7 +38,10 @@ test with simple class
     destr 1
     destr 2
     destr 3
-test with a class with move constructor
+```
+    
+### Test with a class with move constructor
+```
   create capacity=0 vector
   push 1
     constr 1
@@ -62,7 +65,10 @@ test with a class with move constructor
     destr 1
     destr 2
     destr 3
-test with a class with noexcept move constructor
+```
+
+### Test with a class with noexcept move constructor
+```
   create capacity=0 vector
   push 1
     constr 1
@@ -86,7 +92,6 @@ test with a class with noexcept move constructor
     destr 1
     destr 2
     destr 3
-
 ```
 
 Pushing something into an `std::vector` always causes a copy or move (if available) to happen. Move can be implemented faster on non-trivial classes, so it is a good idea to have it.
